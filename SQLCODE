@@ -1,0 +1,535 @@
+# Inserir dados na tabela Cursos
+/*
+TABELA dbAlunos_Turma1
+*/
+SELECT *
+FROM Cursos;
+INSERT INTO Cursos
+VALUES ('TIR','Técnico de Informática - Instalação e Gestão de Redes');
+INSERT INTO Cursos
+VALUES ('TLO','Técnico de Logística');
+INSERT INTO Cursos
+VALUES ('TQA','Técnico de Qualidade Alimentar');
+# Isto é um comentário
+-- isto é outro comentário
+/*
+Comentário de várias linhas!
+*/
+# Inserir dados na tabela Turmas
+SELECT *
+FROM Turmas;
+# Inserindo alunos nas turmas
+INSERT INTO Turmas
+VALUES('TIST11922','Turma 1 - Técnico de Informática - Sistemas','2019','2022','TIS');
+INSERT INTO Turmas
+VALUES('TIST21922','Turma 2 - Técnico de Informática - Sistemas','2019','2022','TIS');
+INSERT INTO Turmas
+VALUES('TIRT12023','Turma 1 - Técnico de Informática, Inst. Gest. Redes','2020','2023','TIR');
+INSERT INTO Turmas
+VALUES('TIRT22023','Turma 2 - Técnico de Informática, Inst. Gest. Redes','2020','2023','TIR');
+INSERT INTO Turmas
+VALUES('TIRT12124','Turma 1 - Técnico de Informática, Inst. Gest. Redes','2021','2024','TIR');
+INSERT INTO Turmas
+VALUES('TLOT12023','Turma 1 - Técnico de Logistica','2020','2023','TLO');
+INSERT INTO Turmas
+VALUES('TQA11922','Turma 1 - Técnico de Qualidade Alimentar','2019','2022','TQA');
+#Inserir Alunos
+INSERT INTO Alunos(nomeAluno, dataNascimento, moradaAluno, telemovelAluno,codTurma)
+Values('Cristiano Ronaldo','2000-09-29','Rua B',929970960,'TIST21922');
+INSERT INTO Alunos(nomeAluno, dataNascimento, moradaAluno, telemovelAluno,codTurma)
+Values('Maria Dolores','2000-03-17','Rua C',937770960,'TIST21922');
+INSERT INTO Alunos(nomeAluno, dataNascimento, moradaAluno, telemovelAluno,codTurma)
+Values('Joana Medina','2001-03-17','Rua A',920370960,'TIST21922');
+INSERT INTO Alunos(nomeAluno, dataNascimento, moradaAluno, telemovelAluno,codTurma)
+Values('Miguel Loura','2001-05-27','Rua X',913330960,'TIST11922');
+INSERT INTO Alunos(nomeAluno, dataNascimento, moradaAluno, telemovelAluno,codTurma)
+Values('Miguel Azevedo','2000-09-09','Rua X',913900960,'TIST11922');
+INSERT INTO Alunos(nomeAluno, dataNascimento, moradaAluno, telemovelAluno,codTurma)
+Values('Jaao Vasconcel','2000-03-17','Rua A',921279960,'TQA11922');
+INSERT INTO Alunos(nomeAluno, dataNascimento, moradaAluno, telemovelAluno,codTurma)
+Values('Gonçalo Soares','2000-03-25','Rua P',921279960,'TQA11922');
+INSERT INTO Alunos(nomeAluno, dataNascimento, moradaAluno, telemovelAluno,codTurma)
+Values('Pauli Medeiro','2000-02-21','Rua A',913355550,'TIRT22023');
+INSERT INTO Alunos(nomeAluno, dataNascimento, moradaAluno, telemovelAluno,codTurma)
+Values('Pauli Medeiro','2000-02-21','Rua A',913355550,'TIRT22023');
+INSERT INTO Alunos(nomeAluno, dataNascimento, moradaAluno, telemovelAluno,codTurma)
+Values('Joao Louran','2001-07-21','Rua X',913999550,'TIRT22023');
+INSERT INTO Alunos(nomeAluno, dataNascimento, moradaAluno, telemovelAluno,codTurma)
+Values('Carlos Afonso','2000-02-118','Rua B',913955550,'TIRT12023');
+INSERT INTO Alunos(nomeAluno, dataNascimento, moradaAluno, telemovelAluno,codTurma)
+Values('Joo Leao','2000-08-13','Rua B',913355550,'TIRT12023');
+INSERT INTO Alunos(nomeAluno, dataNascimento, moradaAluno, telemovelAluno,codTurma)
+Values('Leao Miguel','2000-01-01','Rua B',913665550,'TIRT12023');
+INSERT INTO Alunos(nomeAluno, dataNascimento, moradaAluno, telemovelAluno,codTurma)
+Values('Mario Eduardo','2000-03-19','Rua B',913355550,'TLOT12023');
+INSERT INTO Alunos(nomeAluno, dataNascimento, moradaAluno, telemovelAluno,codTurma)
+Values('Paulinho Sousa','2000-09-12','Rua B',913355550,'TLOT12023');
+INSERT INTO Alunos(nomeAluno, dataNascimento, moradaAluno, telemovelAluno,codTurma)
+Values('Mario Eduardo','2000-07-15','Rua C',913000000,'TLOT12023');
+#atualizar o numero de telemovel de um aluno
+UPDATE Alunos
+SET telemovel =333333444
+WHERE numAlunos = 2;
+#eliminar linhas
+DELETE FROM Alunos
+WHERE numAlunos = 2;
+#mostra todos os alunos
+SELECT *
+FROM Alunos;
+#mostrar só o nome do aluno e a data
+SELECT nomeAluno , dataNascimento
+FROM Alunos;
+#mostrar só o nome do aluno e a data
+#ordenamdo pelo nome ascendente
+SELECT nomeAluno , dataNascimento
+FROM Alunos
+ORDER BY nomeAlunos ASC;
+#mostrar só o nome do aluno e a data
+#ordenamdo pelo nome descendente
+SELECT nomeAluno , dataNascimento
+FROM Alunos
+ORDER BY nomeAluno DESC;
+#mostar os dado do aluno com numAluno = 10
+SELECT *
+FROM Alunos
+WHERE numAlunos = 10;
+#mostrar o nome dos alunos e designação da turma
+SELECT nomeAluno , designacao
+FROM Alunos, Turmas
+WHERE Alunos.codTurma = Turmas.codTurma;
+#mostrar o nome dos alunos e designação da turma "TIST11922"
+SELECT nomeAluno , designacao
+FROM Alunos, Turmas
+WHERE Alunos.codTurma = Turmas.codTurma
+AND Turmas.codTurma ='TIST11922';
+#mostrar o nome dos alunos e designação do respetivo curso "TIST11922"
+SELECT nomeAluno , Cursos.designacao
+FROM Alunos, Turmas , Cursos
+WHERE Alunos.codTurma = Turmas.codTurma
+AND Turmas.codCurso = Cursos.codCurso
+AND Cursos.codCurso = 'TQA';
+/*listar os alunos (nome , morada) que terminam o curso em 2022*/
+SELECT nomeAluno ,moradaAluno
+FROM Alunos,Turmas
+WHERE Alunos.codTurma = Turmas.codTurma
+AND Turmas.anofim = 2022;
+/*mostra os alunos nascidos em 2000*/
+SELECT *
+FROM Alunos
+WHERE YEAR(dataNascimento) = 2000;
+/*
+NOVA TABELA - WORLD
+*/
+USE world
+SELECT * FROM country;
+SELECT * FROM city;
+SELECT * FROM countrylanguage;
+#Mostrar cidade de pais com codigo 'ABW'
+SELECT * FROM city WHERE Code = 'PRT';
+#Mostrar o nome da cidade, populaçao e nome do pais com código ABW
+SELECT C.Name, C.Population, T.Name AS 'Country'
+FROM city C, country T
+WHERE C.Code = T.code
+AND T.Code = 'USA';
+#Exercicios
+#1
+/* Inserir na tabela city a seguinte cidade:
+Nome: Lagoa
+País: Portugal
+Distrito: Açores
+População: 4000
+*/
+USE world;
+INSERT INTO city(Name,Code,District,Population)
+VALUES('Lagoa','PRT','Açores',4000);
+SELECT *
+FROM city
+WHERE CODE ='PRT';
+#Exercicio 2
+#-- Alterar a população da cidade de Tirana (Albânia) para 280000
+UPDATE city
+SET Population = 280000
+WHERE ID = 34;
+# WHERE District = 'ALB' AND city.Name = 'Tirana';
+SELECT *
+FROM city
+WHERE Name ='Tirana';
+#Exercicio 3
+#Eliminar a cidade de Herat, no Afeganistão
+DELETE FROM city
+WHERE Name='Herat'
+AND Code = 'AFG';
+#Exercicio 4
+#Mostrar os países cuja língua oficial é o Inglês
+SELECT country.Name, countrylanguage.Language, countrylanguage.IsOfficial
+FROM countrylanguage, country
+WHERE countrylanguage.Code = country.Code
+AND countrylanguage.Language = 'English'
+AND countrylanguague.IsOfficial = 'T';
+#Exemplo com aliados
+SELECT C.Name, L.Language, L.IsOfficial
+FROM countrylanguage L, country C
+WHERE L.Code = C.Code
+AND L.Language = 'English'
+AND L.IsOfficial = 'T';
+#Exercicio 4
+# Listar os países com área superior a 10000 km2
+SELECT C.Name, C.SurfaceArea
+FROM country C
+WHERE C.SurfaceArea > 10000;
+#Exercicio 5
+-- Listar as cidades e os respetivos país com população entre 100000 e 200000 habitantes
+SELECT CC.Name, C.Name, CC.Population
+From city CC, country C
+WHERE CC.Code = C.Code
+AND CC.population >= 100000 AND CC.population <= 200000;
+#Ex6
+-- contar o número total de cidades
+SELECT COUNT(city.Name)
+FROM city;
+#Ex7
+-- qual o valor máximo da população de todas as cidades?
+SELECT MAX(Population)
+FROM city;
+#Ex8
+-- qual o valor mínimo da população de todos os países?
+SELECT MIN(Population)
+FROM country;
+#Ex9
+-- qual o nome da cidade com maior população?
+-- EXEMPLO DE SUB-CONSULTA
+SELECT CC.Name, CC.Population
+FROM city CC
+WHERE CC.Population = (SELECT MAX(Population)FROM city);
+#Ex10
+-- qual a média de população de todos os países? Apresente a coluna com o nome 'Média Pop' e o valor arredondado para inteiro
+SELECT ROUND (AVG(country.Population)) AS 'Media POP'
+FROM country;
+#Ex11
+-- quais os países com população superior à média da população de todos os países?
+SELECT C.Population, C.Name
+FROM country C
+WHERE C.Population >= (SELECT AVG(Population)FROM country);
+-- listar os nomes dos países e o total de cidades por país. Ordene pelo valor decrescente.
+SELECT C.Name, COUNT(CC.Code)
+FROM country C, city CC
+WHERE C.Code = CC.Code
+GROUP BY C.Name
+ORDER BY COUNT(CC.Code) DESC;
+-- listar os nomes dos países com mais do que 100 cidades. Ordene pelo valor decrescente.
+SELECT C.Name, COUNT(CC.Code)
+FROM country C, city CC
+WHERE C.Code = CC.Code
+GROUP BY C.Name
+HAVING COUNT(CC.Code) > 100
+ORDER BY COUNT(CC.Code) DESC;
+-- listar os países com informação sobre o ano de independência
+SELECT C.Name, C.IndepYear
+From country C;
+-- quantos países têm como língua oficial o Português (code Portuguese)?
+SELECT C.Name, L.Language, L.IsOfficial
+FROM countrylanguage L, country C
+WHERE L.Code = C.Code
+AND L.Language = 'Portuguese'
+AND L.IsOfficial = 'T';
+-- listar a contagem de países por Continente. apresentar a coluna da contagem com o nome 'Total de Países'
+SELECT C.Continent, COUNT(C.Name) AS 'Total de Paises'
+FROM country C
+GROUP BY C.Continent
+ORDER BY COUNT(C.Code)
+DESC;
+-- apresente o total da população de todas as cidades, por país.
+SELECT C.Name, sum(CC.Population) AS 'Total População'
+FROM country C, city CC
+WHERE C.Code = CC.Code
+GROUP BY C.Name;
+-- apresentar uma listagem das cidades, o respetivo país e a lingua mais falada nesse país
+SELECT CC.Name, C.Name, CL.Language, CL.Percentage
+FROM city CC, country C, countrylanguage CL
+WHERE C.Code = CC.Code
+AND CC.Code = CL.Code
+AND CL.Percentage = (SELECT max(countrylanguage.Percentage)
+FROM countrylanguage
+WHERE countrylanguage.Code = CC.Code)
+ORDER BY C.Name
+USE sakila
+-- 1 listar todos os filmes (nome) da categoria Drama
+SELECT F.title, C.category_id
+FROM film F, category C
+WHERE C.category_id = 7
+SELECT F.title, C.name
+FROM film F, film_category FC, category C
+WHERE F.film_id = FC.film_id
+AND FC.category_id = F.category_id
+AND C.name = 'Drama';
+-- 2 mostrar todas as categorias de todos os filmes
+SELECT F.name
+FROM category F;
+-- 3 listar os filmes e o número de categorias a que pertencem
+SELECT F.title AS 'film', COUNT(FC.category_id) AS 'Total Categorias'
+FROM film F, film_category FC
+WHERE F.film_id = FC.film_id
+GROUP BY F.title;
+#Adicionar a categoria 16 ao filme com id = 1
+INSERT INTO film_category(film_id, category_id, last_update)
+VALUES(1,16,NOW());
+-- 4 listar as categorias que não têm filmes
+SELECT DISTINCT C.category_id, C.Name
+FROM category C, film_category FC
+WHERE C.category_id NOT IN(SELECT DISTINCT category_id
+FROM film_category);
+UPDATE film_category
+SET category_id = 1
+WHERE category_id = 16;
+SELECT F.film_id, F.category_id, C.category_id
+FROM film_category F, category C
+WHERE NOT F.category_id = C.category_id;
+/* 5 Mostrar o primeiro e o último nome dos atores numa única,
+coluna, em maiúsculas. Nomear a coluna como 'Nome do ator'.*/
+SELECT LOWER(concat(A.first_name,' ',A.last_name)) AS 'Nome do ator'
+FROM actor A;
+-- CONCAT- juntar e ficar com espaços
+-- LOWER - letras minusculas
+/* 6 Encontrar todos os atores cujo último nome contem a
+sequência de letras GEN*/
+SELECT concat(A.first_name,SPACE(1),A.last_name) AS 'Nome do ator'
+FROM actor A
+WHERE A.last_name LIKE '%GEN%';
+/* 7 Encontrar todos os atores cujo último contém L. Ordenar
+primeiro pelo último nome e depois pelo primeiro nome*/
+SELECT A.last_name AS 'Ultimo Nome',A.first_name AS 'Primeiro Nome'
+FROM actor A
+WHERE A.last_name LIKE '%L%'
+ORDER BY last_name DESC, first_name DESC;
+/* 8 Mostrar os dados dos seguintes países: Afeghanistan,
+Bangladesh e China. Usar a clausula IN*/
+SELECT *
+FROM country C
+WHERE C.country IN ('Afghanistan', 'Bangladesh', 'China');
+/* 9 Listar o último nome dos atores e quantos atores possuem
+esse mesmo último nome*/
+SELECT A.last_name, COUNT(A.last_name) AS 'Quantidade de pessoass'
+FROM actor A
+GROUP BY last_name;
+/*10 Listar o último nome dos atores e quantos atores possuem
+esse mesmo último nome mas apenas se houver pelo menos 2
+atores com o mesmo último nome */
+SELECT last_name, COUNT(actor_id) AS 'Quantidade de pessoass'
+FROM actor
+GROUP BY last_name
+HAVING COUNT(actor_id) >=2
+ORDER BY COUNT(actor_id) DESC;
+/*11 O ator HARPO WILLIAMS foi acidentalmente introduzido
+na bd com o nome GROUCHO WILLIAMS. Escreva uma consulta
+para corrigir o problema*/
+UPDATE actor
+SET first_name = 'Harpo'
+WHERE first_name = 'Harpyyyy'
+AND last_name = 'WILLIAMS';
+/*12 Listar os nomes dos membros do staff e
+respetivas moradas*/
+SELECT concat(S.first_name,SPACE(1),S.last_name) AS 'Membros do staff', A.address
+FROM staff S, address A
+WHERE S.address_id = A.address_id;
+/*13 Mostrar o total de receita gerada por cada membro do
+staff em Agosto de 2005*/
+SELECT concat(S.first_name,SPACE(1),S.last_name) AS 'Membros do staff', SUM(P.Amount) AS 'Total do mês de Agosto - 2005'
+FROM staff S, payment P
+WHERE S.staff_id = P.staff_id
+AND P.payment_date LIKE '2005-08%'
+GROUP BY S.staff_id;
+SELECT concat(S.first_name,SPACE(1),S.last_name) AS 'Membros do staff', SUM(P.Amount) AS 'Total do mês de Agosto - 2005'
+FROM staff S, payment P
+WHERE S.staff_id = P.staff_id
+AND YEAR (P.payment_date) = 2005
+AND MONTH(P.payment_date) = 08
+GROUP BY S.staff_id;
+-- EXERCICIOS 'NORTHWIND'
+USE northwind;
+-- a.Quantas encomendas processou cada funcionário?
+SELECT concat(E.FirstName, SPACE(1), E.LastName) AS 'Funcionários', COUNT(O.OrderID) AS 'Total de Encomendas'
+FROM employees E , orders O
+WHERE E.EmployeeID = O.EmployeeID
+GROUP BY O.EmployeeID;
+-- b.Quais os clientes que a empresa tem no mesmo país
+-- que o cliente "Familia Arquibaldo"?
+SELECT C.CompanyName AS 'Clientes', C.Country
+FROM customers C
+WHERE C.Country IN (SELECT Country
+FROM customers
+WHERE CompanyName = 'Familia Arquibaldo');
+-- c.O carro do funcionário Robert King avariou e ele precisa de boleia para casa de alguém
+-- que vive na mesma cidade. Quais os colegas que lhe podem dar boleia?
+SELECT concat(E.FirstName, SPACE(1), E.LastName) AS 'Funcionários', E.City
+FROM employees E
+WHERE E.City IN (SELECT City
+FROM employees
+WHERE FirstName = 'Robert' AND LastName = 'King');
+-- d. A empresa pretende entregar medalhas aos três funcionários que geraram mais vendas.
+-- Quem são eles?
+SELECT E.EmployeeID ,concat(E.FirstName, SPACE(1), E.LastName) AS 'Funcionários', SUM(OD.Quantity*OD.UnitPrice) AS ' Total de Vendas'
+FROM employees E , orders O, orderdetails OD
+WHERE E.EmployeeID = O.EmployeeID
+AND O.OrderID = OD.OrderID
+GROUP BY E.EmployeeID
+ORDER BY SUM(OD.Quantity*OD.UnitPrice) DESC
+LIMIT 3;
+-- e. Quais os clientes que até agora não fizeram qualquer encomenda?
+SELECT C.CustomerID AS ' Código de Cliente', C.CompanyName AS 'Nome do Cliente'
+FROM customers C
+WHERE C.CustomerID NOT IN(SELECT CustomerID
+FROM orders);
+-- f. Quantos funcionários há em cada região?
+SELECT R.RegionDescription, COUNT(ET.EmployeeID)
+FROM employeeterritories ET, territories T, region R
+WHERE ET.TerritoryID = T.TerritoryID
+AND T.RegionID = R.RegionID
+GROUP BY R.RegionDescription;
+USE northwind;
+SELECT R.RegionDescription AS 'Regiao', COUNT(DISTINCT ET.EmployeeID) AS 'Total Funcionários'
+FROM employeeterritories ET, territories T, region R
+WHERE ET.TerritoryID = T.TerritoryID
+AND T.RegionID = R.RegionID
+GROUP BY R.RegionDescription;
+-- g. Qual, ou quais, a(s) encomenda(s) com mais linhas?
+SELECT OrderID AS 'Numero de Encomenda', COUNT(ProductID) AS 'Numero de Produto'
+FROM orderdetails
+GROUP BY OrderID
+ORDER BY COUNT(ProductID) DESC
+LIMIT 500;
+-- i. Qual é a média de vendas por região?
+WITH aux AS
+(
+SELECT orderdetails.orderID, SUM(orderdetails.Quantity*orderdetails.UnitPrice) AS 'totalencomenda'
+FROM orderdetails
+GROUP BY orderdetails.OrderID
+)
+SELECT customers.Country, ROUND(AVG(aux.totalencomenda))
+FROM aux, orders, customers
+WHERE aux.OrderID = orders.OrderID
+AND orders.CustomerID = customers.CustomerID
+GROUP BY customers.Country;
+-- j. Quantas pessoas cada chefe tem a seu cargo?
+SELECT ReportsTO, COUNT(EmployeeID)
+FROM employees
+GROUP BY ReportsTO;
+# ******************************************************************************************
+/*4. Crie uma view que mostre os nomes de todos os produtos
+por ordem alfabética ascendente e a respetiva categoria e fornecedor.*/
+SELECT P.ProductName, C.CategoryName, S.CompanyName
+FROM products P, categories C, suppliers S
+WHERE P.CategoryID = C.CategoryID
+AND P.SupplierID = S.SupplierID
+ORDER BY ProductName ASC;
+/*5. Crie uma view que mostre os detalhes de todas as vendas de
+um determinado ano (Ex: 1997)*/
+DROP VIEW IF EXISTS vendas_ano;
+CREATE VIEW vendas_ano AS
+SELECT *
+FROM orders
+WHERE YEAR(OrderDate)='1997';
+SELECT *
+FROM vendas_ano;
+call sp1;
+DROP PROCEDURE IF EXISTS sp2;
+DELIMITER $$
+CREATE PROCEDURE sp2(IN id VARCHAR(5))
+BEGIN
+SELECT *
+FROM customers
+WHERE CustomerID = id;
+END$$
+DELIMITER ;
+CALL sp2('BOLID')
+/*6. Defina um stored procedure que recebe o CustomerID e
+mostra uma listagem com o valor total de cada encomenda desse cliente.*/
+DROP PROCEDURE IF EXISTS total_encomenda_cliente;
+DELIMITER $$
+CREATE PROCEDURE total_encomenda_cliente(IN custID VARCHAR(5))
+BEGIN
+SELECT O.CustomerID, OD.OrderID, SUM(OD.Quantity*OD.UnitPrice)
+FROM orders O, orderdetails OD
+WHERE O.OrderID = OD.OrderID
+AND O.CustomerID = custID
+GROUP BY OD.OrderID;
+END$$
+DELIMITER ;
+CALL total
+-- 7. Defina um stored procedure que retorna a contagem dos produtos
+-- de um determinado fornecedor
+DROP PROCEDURE IF EXISTS contagem_produtos_fornecedor;
+DELIMITER $$
+CREATE PROCEDURE contagem_produtos_fornecedor(IN suppID INT, OUT cont INT)
+BEGIN
+SELECT count(P.ProductID) INTO cont
+FROM products P
+WHERE P.SupplierID = suppID;
+END$$
+DELIMITER ;
+CALL contagem_produtos_fornecedor(3,@cont);
+SELECT @cont;
+USE teste_trigger;
+INSERT INTO produtos (produto, precoUnitario, stock) VALUES
+('tomates','0.79','19'),
+('alface','0.49','19'),
+('batata','0.69','19'),
+('oleo','3.99','10'),
+('vinagre','2.99','10'),
+('esparguete','1.10','10');
+DROP TRIGGER IF EXISTS t1;
+DELIMITER $$
+CREATE TRIGGER t1 AFTER UPDATE ON produtos
+FOR EACH ROW
+BEGIN
+IF (OLD.precoUnitario != NEW.precoUnitario) THEN
+INSERT INTO historico_produto(preco_antigo, preco_atual, data_altera, idprodutos)
+VALUES(OLD.precoUnitario, NEW.precoUnitario, CURDATE(),OLD.idprodutos);
+END IF;
+END $$
+DELIMITER ;
+UPDATE produtos
+SET produto = 'manteiga'
+WHERE idprodutos = 3;
+--
+INSERT INTO vendas(data_venda) VALUES
+(CURDATE());
+CALL criar_venda(1,1);
+CALL criar_venda(2,1);
+CALL criar_venda(3,4);
+DROP TRIGGER IF EXISTS atualiza_stock;
+DELIMITER $$
+CREATE TRIGGER atualiza_stock BEFORE INSERT ON detalhes_vendas
+FOR EACH ROW
+BEGIN
+declare stock INT;
+declare produto VARCHAR(45);
+declare txt VARCHAR(40);
+-- COLOCAR na VARIAVEL @STOCK a existencia do produto a inserir na venda
+SELECT produtos.stock INTO @tock
+FROM produtos
+WHERE produtos.idprodutos = NEW.idprodutos;
+-- se o stock menos a quantidade a vender for >= 0 significa que há stock
+IF(stock - NEW.quantidade >= 0) THEN
+UPDATE produtos
+SET produtos.stock = stock - NEW.quantidade
+WHERE produtos.idprodutos = NEW.idprodutos;
+ELSE
+SELECT produtos.produto INTO @produto
+FROM produtos
+WHERE NEW.idprodutos = produtos.idprodutos;
+SET txt = CONCAT('Quantidade Insuficiente de ',produto);
+SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = @txt;
+END IF;
+END $$
+DELIMITER ;
+DROP PROCEDURE IF EXISTS criar_venda;
+DELIMITER //
+CREATE PROCEDURE criar_venda(IN idproduto INT, IN quantidade INT)
+BEGIN
+SELECT MAX(idvendas)INTO @lastvenda
+FROM vendas;
+SELECT @lastvenda;
+INSERT INTO detalhes_vendas(idvendas, idprodutos, quantidade)
+VALUES(@lastvenda, idprodutos,quantidade);
+END //
+DELIMITER ;
